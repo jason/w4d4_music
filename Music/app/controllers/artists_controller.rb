@@ -15,9 +15,14 @@ class ArtistsController < ApplicationController
   end
 
   def edit
+    @artist = Artist.find(params[:id])
   end
 
   def update
+    @artist = Artist.find(params[:id])
+    @artist.update_attributes(:band_id => params[:band_id], :name => params[:name])
+    flash.notice = "you win!"
+    redirect_to "/artists/"
   end
 
   def create
@@ -26,7 +31,7 @@ class ArtistsController < ApplicationController
     @artist.name = params[:name]
     @artist.save
 
-    render "index"
+    redirect_to "/artists/"
   end
 
 end

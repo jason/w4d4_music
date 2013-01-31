@@ -4,6 +4,7 @@
   <% @artists.each do |artist| %>
     <li>
       <%= link_to format_link_title(artist), artist_path(artist) %>
+      <%= link_to "Edit", edit_artist_path(artist) %>
     </li>
   <% end %>
 </ul>
