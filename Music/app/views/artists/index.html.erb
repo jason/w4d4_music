@@ -1,0 +1,9 @@
+<h1>Hit Artists of the Day . 5</h1>
+
+<ul>
+  <% @artists.each do |artist| %>
+  <li>
+    <%= link_to format_link_title(artist), artist_path(artist) %>
+    </li>
+  <% end %>
+</ul>

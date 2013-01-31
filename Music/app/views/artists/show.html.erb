@@ -1,0 +1,10 @@
+<h1><%= @artist.name %></h1>
+<h2><i><%= @artist.band.name if @artist.band %></i></h2>
+<h4><b>Songs:</b></h4>
+<ul>
+  <% @artist.authored_songs.each do |song| %>
+    <li>
+      <%= song.name %>
+    </li>
+  <% end %>
+</ul>
