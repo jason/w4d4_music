@@ -1,2 +1,14 @@
-<h1>Artists#new</h1>
-<p>Find me in app/views/artists/new.html.erb</p>
+<h1>Add an Artist</h1>
+<%= form_tag("/artists", method: :post) do %>
+  <p>
+    <%= label_tag :name, "Artist Name: " %>
+    <%= text_field_tag :name %>
+  </p>
+  <p>
+    <%= label_tag :band_id, "Band ID: " %>
+    <%= text_field_tag :band_id %>
+  </p>
+  <p>
+    <%= submit_tag "Create Artist" %>
+  </p>
+<% end %>

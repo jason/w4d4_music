@@ -2,8 +2,10 @@
 
 <ul>
   <% @artists.each do |artist| %>
-  <li>
-    <%= link_to format_link_title(artist), artist_path(artist) %>
+    <li>
+      <%= link_to format_link_title(artist), artist_path(artist) %>
     </li>
   <% end %>
 </ul>
+
+<%= link_to "Add an Artist", new_artist_path %>

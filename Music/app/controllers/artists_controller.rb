@@ -8,6 +8,7 @@ class ArtistsController < ApplicationController
   end
 
   def new
+    @artist = Artist.new
   end
 
   def destroy
@@ -20,5 +21,12 @@ class ArtistsController < ApplicationController
   end
 
   def create
+    @artist = Artist.new
+    @artist.band_id = params[:band_id]
+    @artist.name = params[:name]
+    @artist.save
+
+    render "index"
   end
+
 end
