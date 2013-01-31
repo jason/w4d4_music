@@ -1,0 +1,14 @@
+<h1><%= @band.name %></h1>
+<h2> Band Member(s):</h2>
+<ul>
+  <% @band.artists.each do |artist| %>
+    <li><%= link_to artist.name, artist_path(artist) %></li>
+  <% end %>
+</ul>
+
+<h3>Songs:</h3>
+<ul>
+  <% @band.songs.each do |song| %>
+    <li><%= link_to song.name, song_path(song) %></li>
+  <% end %>
+</ul>

@@ -1,10 +1,5 @@
 <h1>Edit <%= @artist.name %></h1>
 
 <%= form_tag "/artists/#{@artist.id}", method: :put do %>
-<%= label_tag :name, "Artist Name:" %>
-<%= text_field_tag :name, "Enter the stupid name" %>
-<%= label_tag :band_id, "Band ID" %>
-<%= text_field_tag :band_id, "memorize the stupid band number" %>
-<%= submit_tag "Update Artist" %>
+  <%= render :partial => "form" %>
 <% end %>
-
