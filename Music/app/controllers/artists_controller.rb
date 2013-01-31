@@ -12,6 +12,11 @@ class ArtistsController < ApplicationController
   end
 
   def destroy
+    @artist = Artist.find(params[:id])
+    @artist.destroy
+    flash.notice = "you killed #{@artist.name}!  You bastard!"
+
+    redirect_to "/artists/"
   end
 
   def edit
