@@ -12,8 +12,7 @@ class BandsController < ApplicationController
   end
 
   def create
-    @band = Band.new
-    @band.name = params[:name]
+    @band = Band.new(params[:band])
     @band.save
 
     flash.notice = "Booyah! Band saved!"
@@ -26,7 +25,7 @@ class BandsController < ApplicationController
 
   def update
     @band = Band.find(params[:id])
-    @band.update_attributes(name: params[:name])
+    @band.update_attributes(params[:band])
 
     flash.notice = "Booyah! Band updated again."
     redirect_to bands_path

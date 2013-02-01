@@ -1,10 +1,8 @@
-<p>
-  <%= label_tag :name, "Artist Name: " %>
-  <%= text_field_tag :name, @artist.name %>
-</p>
-<p>
-  <%= collection_select(:artist, :band_id, Band.all, :id, :name) %>
-</p>
-<p>
-  <%= submit_tag "Submit" %>
-</p>
+<%= form_for (@artist) do |f| %>
+  <p>
+    <%= f.label :name, "Artist Name: " %>
+    <%= f.text_field :name %>
+  </p>
+  <p><%= collection_select(:artist, :band_id, Band.all, :id, :name) %></p>
+  <p><%= submit_tag "Submit" %></p>
+<% end %>

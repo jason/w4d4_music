@@ -1,5 +1,2 @@
 <h1>Edit <%= @artist.name %></h1>
-
-<%= form_tag "/artists/#{@artist.id}", method: :put do %>
-  <%= render :partial => "form" %>
-<% end %>
+<%= render :partial => "form" %>
