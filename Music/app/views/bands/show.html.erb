@@ -6,6 +6,9 @@
   <% end %>
 </ul>
 
+<h2>Picture:</h2>
+<%= image_tag photo_band_path(@band) %>
+
 <h3>Songs:</h3>
 <ul>
   <% @band.songs.each do |song| %>

@@ -1,6 +1,10 @@
 Music::Application.routes.draw do
   resources :artists
-  resources :bands
+  resources :bands do
+    member do
+      get :photo
+    end
+  end
   resources :songs
 
   # The priority is based upon order of creation:

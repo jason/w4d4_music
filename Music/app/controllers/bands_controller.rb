@@ -12,8 +12,9 @@ class BandsController < ApplicationController
   end
 
   def create
-    @band = Band.new(params[:band])
-    @band.save
+    band = Band.new(params[:band])
+    band.picture = params[:band].delete(:picture).read
+    band.save
 
     flash.notice = "Booyah! Band saved!"
     redirect_to bands_path
@@ -38,4 +39,10 @@ class BandsController < ApplicationController
     flash.notice = "Booyah! Band destroyed in half."
     redirect_to bands_path
   end
+
+  def photo
+    band = Band.find(params[:id])
+    send_data band.picture, :type => 'image/jpg', :disposition => 'inline'
+  end
+
 end
