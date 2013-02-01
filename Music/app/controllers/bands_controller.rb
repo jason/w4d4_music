@@ -25,16 +25,16 @@ class BandsController < ApplicationController
   end
 
   def update
-    @band = Band.find(params[:id])
-    @band.update_attributes(params[:band])
+    band = Band.find(params[:id])
+    band.update_attributes(params[:band])
 
     flash.notice = "Booyah! Band updated again."
     redirect_to bands_path
   end
 
   def destroy
-    @band = Band.find(params[:id])
-    @band.destroy
+    band = Band.find(params[:id])
+    band.destroy
 
     flash.notice = "Booyah! Band destroyed in half."
     redirect_to bands_path

@@ -2,5 +2,6 @@
   <%= f.label :name, "Band Name" %>
   <%= f.text_field :name %>
   <%= f.file_field :picture %>
+  <%= collection_select(:band, :artists, Artist.all, :id, :name, { :multiple => true }) %>
   <%= f.button "A little text" %>
 <% end %>

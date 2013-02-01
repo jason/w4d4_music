@@ -1,5 +1,5 @@
 class Band < ActiveRecord::Base
-  attr_accessible :name, :picture
+  attr_accessible :name, :picture, :artists
   has_many :artists
   has_many :recordings
   has_many :songs, through: :recordings
